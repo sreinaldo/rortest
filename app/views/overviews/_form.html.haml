@@ -1,0 +1,10 @@
+= simple_form_for(@overview) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :description, required: true
+  .hidden
+    = f.input :profile
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-success'

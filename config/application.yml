@@ -1,0 +1,10 @@
+no_email: 'no@email.fb'
+
+production:
+  http_root: 'http://rortest.herokuapp.com'
+
+development:
+  http_root: 'http://localhost:3000'
+
+test:
+  http_root: 'http://localhost:3000'

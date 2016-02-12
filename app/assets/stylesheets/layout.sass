@@ -1,0 +1,48 @@
+body
+  padding-top: 70px
+
+footer
+  padding-top: 50px
+
+.container
+  max-width: 800px
+
+.page-header
+  margin-top: 0px
+
+.btn
+  white-space: normal
+  pointer-events: auto
+
+.table
+  &.table-no-border > tbody > tr > td
+    border: none
+  &.table-striped > tbody > tr:hover
+    background: #dff3fd
+  & > tbody > tr
+    & > td > .show-on-hover
+      opacity: 0.5
+    &:hover > td > .show-on-hover
+      opacity: 1
+
+.navbar, .navbar-collapse
+  background: #777 !important
+  border: 0px !important
+  ul.nav li
+    a
+      padding-left: 10px
+      padding-right: 10px
+      &:hover
+        background: #695 !important
+        color: #fff !important
+    & > ul li a
+      padding-left: 10px
+      padding-right: 10px
+
+#content
+  a
+    text-decoration: none !important
+    &:hover
+      text-decoration: underline !important
+    &.btn, &.btn:hover
+      text-decoration: none !important

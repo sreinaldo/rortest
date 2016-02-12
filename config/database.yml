@@ -1,0 +1,33 @@
+default: &default
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
+development: &development
+  <<: *default
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  database: ror_test
+  username: test
+  password: test
+
+test: &test
+  <<: *default
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  database: ror_test
+  username: test
+  password: test
+
+
+production: &production
+  <<: *default
+  adapter: postgresql
+  host: ec2-54-83-17-9.compute-1.amazonaws.com
+  port: 5432
+  database: d3tas3rekdr903
+  username: mkrhozxsrpaasi
+  password: 3Nmb8b5Z3CKDzw41mHe2C5JMJV
+

@@ -1,0 +1,5 @@
+-if @profiles.skills.present?
+  %ul
+    - @profiles.skills.each do |skill|
+      %li
+        = skill.description

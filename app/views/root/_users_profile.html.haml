@@ -1,0 +1,16 @@
+%h1 User's Profiles
+
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Email
+      %th
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= link_to 'View', view_profiles_path(user.profile.first)
+
+%br
+

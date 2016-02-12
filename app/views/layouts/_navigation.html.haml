@@ -1,0 +1,29 @@
+.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      %a.navbar-brand{:href => "/"} RoR Test
+      %button.navbar-toggle{"data-target" => "#navbar-main", "data-toggle" => "collapse", :type => "button"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    #navbar-main.navbar-collapse.collapse
+      - if current_user.present?
+        %ul.nav.navbar-nav
+          %li
+            = link_to('Profile', profiles_path)
+          - if user_signed_in?
+            %li
+              = link_to('Admin', '/admin') if current_user.try(:admin)
+
+      %ul.nav.navbar-nav.navbar-right
+
+        - if user_signed_in?
+          %li.dropdown
+            %a#user.dropdown-toggle{"aria-expanded" => "true", "data-toggle" => "dropdown", :href => "#"}
+              = current_user.email
+            %ul.dropdown-menu{"aria-labelledby" => "user"}
+              %li
+                = link_to 'Logout', logout_path
+        - else
+          %li
+            = link_to 'Log in / Sign up', login_path

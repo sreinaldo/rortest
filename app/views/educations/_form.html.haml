@@ -1,0 +1,17 @@
+= simple_form_for(@education) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :institution
+    = f.input :degree
+    = f.input :start_date, as: :date, start_year: Date.today.year ,
+                              end_year: Date.today.year - 30,
+                              order: [:day, :month, :year]
+    = f.input :end_date, as: :date, start_year: Date.today.year ,
+                              end_year: Date.today.year - 30,
+                              order: [:day, :month, :year]
+  .hidden
+    = f.association :profile
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-success'

@@ -1,0 +1,21 @@
+%h2 Listing overviews
+
+%table
+  %thead
+    %tr
+      %th Description
+      %th Profile
+      %th
+      %th
+
+  %tbody
+    - @overviews.each do |overview|
+      %tr
+        %td= overview.description
+        %td= link_to 'Show', overview
+        %td= link_to 'Edit', edit_overview_path(overview)
+        %td= link_to 'Destroy', overview, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Overview', new_overview_path

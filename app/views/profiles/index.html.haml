@@ -1,0 +1,45 @@
+%h2
+  - if user_signed_in?
+    - if @profiles.present?
+      = link_to "Profile #{@profile_name}", edit_profile_path(@profiles)
+    - else
+      = link_to 'New Profile', new_profile_path
+
+- if @profiles.present?
+  %table.table.table-hover.table-no-border
+    %tr
+      %td.col-lg-5
+        %h3
+          - if user_signed_in?
+            - if @profiles.overview.present?
+              = link_to 'Overview', edit_overview_path(@profiles.overview)
+            - else
+              = link_to 'Overview', new_overview_path
+          - else
+            Overview
+        = render 'overview'
+    %tr
+      %td.col-lg-5
+        %h3
+          - if user_signed_in?
+            - if @profiles.educations.present?
+              = link_to 'Education', educations_path
+            - else
+              = link_to 'Education', new_education_path
+          - else
+            Education
+        = render 'education'
+
+    %tr
+      %td.col-lg-5
+        %h3
+          - if user_signed_in?
+            - if @profiles.skills.present?
+              = link_to 'Skills', skills_path
+            - else
+              = link_to 'Skills', new_skill_path
+          - else
+            Skills
+        = render 'skills'
+
+= link_to 'Back', root_path unless user_signed_in?

@@ -1,0 +1,9 @@
+- if @profiles.educations.present?
+  %table
+    - @profiles.educations.each do |row|
+      %tr
+        %td.col-lg-5 #{row.institution}
+      %tr
+        %td.col-lg-5 #{row.degree}
+      %tr
+        %td.col-lg-5 #{row.start_date} - #{row.end_date}
